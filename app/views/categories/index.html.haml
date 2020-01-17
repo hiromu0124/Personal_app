@@ -1,0 +1,58 @@
+.header
+  .header__head
+    .header__head__title
+      title
+  .header__content
+    .header__content__home
+    =link_to root_path, class: "header__content__home" do
+      =icon('fas','fab fa-home',class:"header__home")
+    .header__content__form
+    =search_form_for @q  do |f|
+      = hidden_field_tag :sort
+      = f.text_field :title_cont,class:"header__content__form__search", autocomplete: 'off'
+      = f.submit "" ,class:"header__content__form__btn",render: "search" 
+      =icon("fas","fas fa-search",class:"header__content__form__icon")
+    .header__content__genre
+      %ul#menu
+        %li
+          =link_to  "Markup language",categories_path
+          %ul
+            %li
+              =link_to  "HTML",category_path(category_id=1)
+            %li
+              =link_to  "HAML",category_path(category_id=2)
+            %li
+              =link_to  "CSS",category_path(category_id=3)
+            %li
+              =link_to  "SCSS",category_path(category_id=4)
+        %li
+          =link_to  "Programming language",programming_path
+          %ul
+            %li
+              =link_to  "Ruby",category_path(category_id=5) 
+            %li
+              =link_to  "PHP",category_path(category_id=6) 
+            %li
+              =link_to  "JavaScript",category_path(category_id=7)  
+    
+    .header__content__create
+      = link_to "POST",new_content_path, class: "header__content__create__btn"
+    .header__content__facebook
+      =link_to "https://www.facebook.com/", class: "header__content__facebook__link" do
+        =icon('fab','fab fa-facebook-square',class:"header__content__facebook__icon")
+    .header__content__twitter
+      =link_to "https://twitter.com/", class: "header__content__twitter__link" do
+        =icon('fab','fab fa-twitter-square',class:"header__content__twitter__icon")
+    .header__content__calendar
+      = link_to calendar_index_path,class:"header__content__user__link" do
+        =icon("fas","fal fa-calendar-alt",class:"header__content__calendar__icon")
+    .header__content__user
+      = link_to edit_user_path(current_user),class:"header__content__user__link" do
+        =icon("fas","far fa-user",class:"header__content__user__icon")
+.categries_main
+  .categries_main__header
+    =link_to "カテゴリー一覧",all_path,class:"categries_main__header__link"
+  -@categories_first.each do |category|
+    .categries_main__category_first
+      =link_to category.category,category_path(category_id=category.id),class:"categries_main__link"
+  

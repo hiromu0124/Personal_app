@@ -1,0 +1,49 @@
+.categories{
+  height: 100%;
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+  .category{
+    padding: 50px 0  10px 10px ;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 10px;
+    &__link{
+      text-decoration:none;
+      color: black;
+    }
+    &__main{
+      padding:10px ;
+      border-bottom: 1px solid #eeeeee;
+      &__title{
+        display: flex;
+        &__link{
+          color: black;
+          text-decoration:none;
+        }
+      }
+      &__text{
+        padding-left:10px ;
+        &__link{
+          color: #666666;
+            text-decoration:none;
+        }
+      } 
+      &__user{
+        display: flex;
+        &__name{
+        font-size: 13px;
+        padding-top: 5px;
+        display: flex;
+        &__link{
+          color: #bbbbbb;
+          text-decoration:none;
+        }
+        }
+        &__created_at{
+          color: #bbbbbb;
+          padding: 5px 0 0  5px;
+        }
+      }
+    }
+  }
+}

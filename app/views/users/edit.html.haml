@@ -1,0 +1,50 @@
+.header
+  .header__head
+    .header__head__title
+      title
+  .header__content
+    .header__content__home
+    =link_to root_path, class: "header__content__home" do
+      =icon('fas','fab fa-home',class:"header__home")
+    .header__content__search
+      入力してください
+      .header__content__search__icon
+        =icon("fas","fas fa-search",class:"header__content__search__icon")
+    .header__content__genre
+      .header__content__genre__icon
+      .header__content__genre__code
+    .header__content__create
+    .header__content__facebook
+      =link_to "https://www.facebook.com/", class: "header__content__facebook__link" do
+        =icon('fab','fab fa-facebook-square',class:"header__content__facebook__icon")
+    .header__content__twitter
+      =link_to "https://twitter.com/", class: "header__content__twitter__link" do
+        =icon('fab','fab fa-twitter-square',class:"header__content__twitter__icon")
+    .header__content__user
+      = link_to edit_user_path(current_user),class:"header__content__user__link" do
+        =icon("fas","far fa-user",class:"header__content__user__icon")
+.account
+  .account-main
+    .log-in
+      アカウント編集
+      .log-in__sub   
+        .log-in__sub__btn
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+        .log-in__sub__btn2
+          = link_to "トップページ", :back, class: 'btn'
+    .form  
+    = form_for(current_user) do |f|   
+      .field
+        .field-label
+          = f.label :name
+        .field-input
+          = f.text_field :name, autofocus: true
+      .field
+        .field-label
+          = f.label :email
+        .field-input
+          = f.email_field :email, autofocus: true, autocomplete: "email"
+      .actions
+        .actions-submit
+          =f.submit "保存する",class:"actions-submit__btn"
+          

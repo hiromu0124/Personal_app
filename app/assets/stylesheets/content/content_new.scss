@@ -1,0 +1,65 @@
+.create{
+  position: fixed;
+  background-color:#DDDDDD;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+  &__title{
+    background-color: white;
+    height: 40px;
+    width: calc(100% - 25px) ;
+    margin: 4px 10px;
+    text-align: left;
+    line-height:40px ;
+    padding-left: 5px ;
+    border-radius:7px;
+    }
+  &__text{
+    background-color: white;
+    height: 500px;
+    width: calc(100% - 20px) ;
+    margin: 4px 10px;
+    text-align: left;
+    line-height:40px ;
+    border-radius:7px;
+    font-size: 25px;
+    &__header{
+      height: 30px;
+      width: 100%;
+      background-color:#EEEEEE;
+      &__image{
+        float: right;
+        &__icon{
+          float: right;
+          line-height: 30px;
+          font-size: 30px;
+        }
+        &__form{
+          display: none;
+        }
+      }
+    }
+    &__box{
+      height: calc(100% - 50px);
+      width: 100% ;
+      border-radius:7px;
+      &__form{
+        height: calc(100% - 30px);
+        width: calc(100% - 12px);
+        border-radius:0px 0px 7px 7px;
+        padding:10px 0 0 10px;
+      }
+    }
+  }
+  &__btn{
+    overflow: scroll;
+    background-color: black;
+    height: 20px;
+    width: 0px;
+    margin-top: 10px;
+    color: white;
+    padding:15px 70px 40px 10px;
+    border-radius:15px;
+    float: right;
+  }
+}

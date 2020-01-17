@@ -1,0 +1,31 @@
+.histories{
+  height: 100vh;
+  width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 0 60px;
+  &__header{
+    padding-bottom: 20px ;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 40px;
+    padding: 10px;
+  }
+  &__destroy{
+    margin-left: 500px;
+  }
+    &__title{
+      display: flex;
+
+    &__main{
+      padding: 10px;
+      font-size: 22px;
+      width: 80%;
+      margin: 0 auto;
+    }
+    &__delete{
+      margin-top: 10px;
+    }
+  }
+}

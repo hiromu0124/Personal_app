@@ -1,0 +1,214 @@
+html{
+  background-color: #EEEEEE;
+}
+.header{
+  height: 140px;
+  width: 100%;
+  text-align: center;
+  .header__head{
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    &__title{
+      color: black;
+      font-size: 50px;
+      text-align: center;
+      line-height: 70px;
+    }
+  }
+  .header__content{
+    width: calc(100% - 0px);
+    height: 40px;
+    background-color: black;
+    display: flex;
+    padding: 15px 0px ;
+    &__home{
+      color: white;
+      font-size: 15px;
+      padding: 10px 0 0 50px;
+    }
+    &__home:hover{
+      color: #e0dc62;
+      font-size: 15px;
+      padding: 10px 0 0 50px;
+    }
+    &__form{
+        line-height: 20px;
+        padding: 10px;
+      &__search{
+        margin-top: 10px;
+      }
+      &__btn{
+        color: white;
+        background-color: black;
+        border: none;
+        font-size: 13px;
+        &__icon{
+          color: white;
+          font-size: 13px;
+        }
+        &__icon:hover{
+          color: #e0dc62;
+        }
+      }
+      &__icon{
+        color: white;
+        font-size: 13px;
+      }
+      &__btn:hover{
+        color: #e0dc62;
+      }
+      &__icon:hover{
+        color: #e0dc62;
+      }
+      &__text{
+        color: white;
+        &__field{
+            background-color: white;
+          &__search{
+            
+          }
+        }
+      }
+    }
+    &__genre{
+      color: white;
+      font-size: 15px;
+      padding: 0px 105px 0 50px; 
+      display: flex;
+      &__icon{
+        
+      }
+      #menu{
+        float: inline-end;
+        list-style-type: none;
+        width: 300px;
+        height: 40px;
+        margin: 0 auto;
+        padding: 0;
+        background: black;
+        font-family: cursive;
+      }
+      #menu li{
+        position: relative;
+        width: 50%;
+        float: left;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+      }
+      #menu li a{
+        display: block;
+        margin: 0;
+        padding: 13px 0;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1;
+        text-decoration: none;
+        font-family: cursive;
+      }
+      #menu li ul{
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin: 0;
+          padding: 0;
+      }
+      #menu li:last-child ul{
+        left: -100%;
+        width: 100%
+      }
+      #menu li ul li{
+        overflow: hidden;
+        width: 200%;
+        height: 0;
+        color: #fff;
+        -moz-transition: .2s;
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        -ms-transition: .2s;
+        transition: .2s;
+      }
+      #menu li ul li a{
+        padding: 13px 15px;
+        background:black;
+        text-align: left;
+        font-size: 12px;
+        font-weight: normal;
+      }
+      #menu li:hover > a{
+        background: black;
+        color: #e0dc62;
+        font-family: cursive;
+      }
+      #menu li:hover ul li{
+        overflow: visible;
+        height: 38px;
+        border-bottom: 1px solid #fff;
+      }
+      #menu li:hover ul li:first-child{
+        border-top: 0;
+      }
+      #menu li:hover ul li:last-child{
+        border-bottom: 0;
+      }
+    }
+    &__create{
+      color: white;
+      font-size: 15px;
+      padding-left: 10px;
+      padding:10px  10px 0 0px;
+      &__btn{
+        text-decoration: none;
+        color: white;
+        font-family: cursive;
+      }
+      &__btn:hover{
+        text-decoration: none;
+        color: #e0dc62;
+        font-family: cursive;
+      }
+    }
+    &__facebook{
+      font-size: 30px;
+      
+      margin: 0 10px 0 55px; 
+      &__icon{
+        color:#000088;
+      }
+      &__link{
+      }
+    }
+    &__twitter{
+      font-size: 30px;
+      margin: 1px 0px 0 0px; 
+      &__icon{
+        color: #0099FF; 
+      }
+    }
+    &__calendar{
+      font-size: 30px;
+      margin: 0 10px 0 55px; 
+      &__icon{
+        color: white;
+      }
+      &__icon:hover{
+        color: #e0dc62;
+      }
+    }
+    &__user{
+      font-size: 20px;
+      margin-left:auto;
+      padding: 10px 30px 10px 0;
+    &__icon{
+      color: white;
+      }
+      &__icon:hover{
+        color: #e0dc62;
+      }
+    }
+  }
+}

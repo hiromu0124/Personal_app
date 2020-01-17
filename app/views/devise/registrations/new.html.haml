@@ -1,0 +1,45 @@
+.header
+  .header__head
+    .header__head__title
+      title
+  .header__content
+    .header__content__home
+      =icon('fas','fab fa-home',class:"header__home")
+    .header__content__genre
+      コード
+    .header__content__facebook
+    =link_to "https://www.facebook.com/", class: "contents__btn contents__btn--facebook" do
+      =icon('fab','fab fa-facebook-square',class:"header__content__facebook")
+    .header__content__twitter
+    =link_to "https://twitter.com/", class: "contents__btn contents__btn--twitter" do
+      =icon('fab','fab fa-twitter-square',class:"header__content__twitter")
+.account
+  .sign-up
+    新規アカウント作成
+    = render "devise/shared/error_messages", resource: resource 
+    .form
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .field
+          .field-label
+            = f.label :name
+          .field-input
+            = f.text_field :name, autofocus: true
+        .field
+          .field-label
+            = f.label :email 
+          .field-input
+            = f.email_field :email, autofocus: true, autocomplete:""
+        .field
+          .field-label
+            = f.label :password 
+            .field-input
+              = f.password_field :password, autocomplete: "new-password" 
+        .field
+          .field-label
+            = f.label :password_confirmation
+          .field-input
+            = f.password_field :password_confirmation, autocomplete: "new-password" 
+        .actions
+          .actions-submit
+            = f.submit "Sign up"
+      =render "devise/shared/links" 

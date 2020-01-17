@@ -1,0 +1,24 @@
+.categries_main{
+  overflow: scroll;
+  background-color: white;
+  width: 700px;
+  margin: 0 auto;
+  &__header{
+    padding: 10px;
+    &__link{
+      text-decoration: none;
+    color: black;
+    }
+  }
+  &__link{
+    text-decoration: none;
+    color: black;
+    
+  }
+  &__link:hover{
+    background-image:url(css.png);
+    text-decoration: none;
+    color: #FF33FF;
+  }
+
+}

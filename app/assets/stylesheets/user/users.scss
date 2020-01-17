@@ -1,0 +1,67 @@
+.account{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: #EEEEEE	;
+  overflow: scroll;
+  .account-main{
+    padding: 50px;
+    margin: 100px;
+    border: solid 1px;
+    display: flex;
+    .log-in{
+      font-size: 40px;
+      font-family: Comic Sans MS;
+      width: 300px;
+    }
+    .log-in__sub{
+      margin-top: 100px;
+      height: 60px;
+      width: 300px;
+      display: flex;
+      &__btn{
+        font-size: 15px;
+        background-color: grey;
+        border: solid 1px;
+        width: 100px;
+        text-align: center;
+        line-height: 40px;
+        padding: 10px;
+      }
+      &__btn2{
+        font-size: 15px;
+        background-color: grey;
+        border: solid 1px;
+        width: 100px;
+        margin-left: 5px;
+        text-align: center;
+        line-height: 40px;
+        padding: 10px ;
+      }
+    }
+    .form{
+      margin-left:300px;
+    }
+    .field {
+      margin-bottom: 10px;
+  
+      .field-label {
+        font-family: Comic Sans MS;
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 200;
+      }
+      .field-input {
+        input {
+          width: 100%;
+          padding: 10px;
+          letter-spacing: 1px;
+        }
+      }
+      }
+    .actions-submit{
+      margin: 20px 0 0 130px;
+  }
+  }
+}

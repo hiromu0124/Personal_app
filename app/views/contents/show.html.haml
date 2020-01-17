@@ -1,0 +1,91 @@
+.header
+  .header__head
+    .header__head__title
+      title
+  .header__content
+    .header__content__home
+    =link_to root_path, class: "header__content__home" do
+      =icon('fas','fab fa-home',class:"header__home")
+    .header__content__form
+    =search_form_for @q  do |f|
+      = hidden_field_tag :sort
+      = f.text_field :title_cont,class:"header__content__form__search", autocomplete: 'off'
+      = f.submit "検索" ,class:"header__content__form__btn",render: "search"
+    .header__content__genre
+      %ul#menu
+        %li
+          =link_to  "Markup language",categories_path
+          %ul
+            %li
+              =link_to  "HTML",category_path(category_id=1)
+            %li
+              =link_to  "HAML",category_path(category_id=2)
+            %li
+              =link_to  "CSS",category_path(category_id=3)
+            %li
+              =link_to  "SCSS",category_path(category_id=4)
+        %li
+          =link_to  "Programming language",categories_path
+          %ul
+            %li
+              %a{:href => "#"} Ruby
+            %li
+              %a{:href => "#"} PHP
+            %li
+              %a{:href => "#"}  JavaScript
+    
+    .header__content__create
+      = link_to "POST",new_content_path, class: "header__content__create__btn"
+    .header__content__facebook
+      =link_to "https://www.facebook.com/", class: "header__content__facebook__link" do
+        =icon('fab','fab fa-facebook-square',class:"header__content__facebook__icon")
+    .header__content__twitter
+      =link_to "https://twitter.com/", class: "header__content__twitter__link" do
+        =icon('fab','fab fa-twitter-square',class:"header__content__twitter__icon")
+    .header__content__calendar
+      = link_to calendar_index_path,class:"header__content__user__link" do
+        =icon("fas","fal fa-calendar-alt",class:"header__content__calendar__icon")
+    .header__content__user
+      = link_to profile_path,class:"header__content__user__link" do
+        =icon("fas","far fa-user",class:"header__content__user__icon")
+.show
+  .show-likes
+    =@likes
+  -if @like==nil
+    .show-like
+      = form_with(url: create_like_path, model: @like, local: true) do |f|
+        %label 
+          = f.hidden_field :user_id,value: current_user.id
+          = f.hidden_field :content_id,value: @content.id
+          = f.submit "",class:"show-like__btn"
+          =icon("fas","fas fa-heart",class:"show-like__icon")
+  - else
+    .show-like
+      =link_to content_content_like_path(@content.id),method: :delete do
+        =icon("fas","fas fa-heart",class:"show-like__delete__icon")
+  .show-main
+    =icon("fas","fal fa-clipboard-list",class:"show-icon")
+    投稿
+  .show-main__titles
+    .show-main__titles__title
+      =@content.title
+    .show-main__titles__date
+      =@content.created_at.strftime("%Y-%m-%d %H:%M")
+    .show-main__titles__text
+      = markdown(@content.text).html_safe
+  .answers
+    -@answer.each do |answer|
+      .answer__user
+        =link_to answer.user.name, user_path(answer.user.id),class:"main__menu__contents__content__user__link"
+      .answer
+        .answer__created_at
+          =answer.created_at.strftime("%Y-%m-%d %H:%M")
+        .answer__text
+          = markdown(answer.text).html_safe
+  .answer-form
+    = form_with(url: answer_path, model: @comment,method: :post, local: true) do |f|
+      質問に答えてあげよう！！
+      .answer-form__main
+        = f.text_area  :text, class:"answer-form__main__form"
+        = f.hidden_field :content_id ,value: @content.id
+        = f.submit "答える",class: "answer-form__main__btn"

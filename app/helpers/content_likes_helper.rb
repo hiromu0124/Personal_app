@@ -1,0 +1,2 @@
+module ContentLikesHelper
+end
