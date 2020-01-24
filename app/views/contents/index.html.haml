@@ -60,9 +60,12 @@
       -@articles.each do |content|
         .main__menu__contents__content
           =link_to content.title.truncate(20), content_path(content.id),class:"main__menu__contents__content__link"
-          .main__menu__contents__content__user
-            by.
-            =link_to current_user.name, user_path(content.id),class:"main__menu__contents__content__user__link"
+          -if signed_in?
+            .main__menu__contents__content__user
+              by.
+              =link_to current_user.name, user_path(content.id),class:"main__menu__contents__content__user__link"
+          -else
+
   .all
     .all-main
       =icon("fas","fal fa-clipboard-list",class:"show-icon")

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "contents#index"
+  root to: "contents#index_main"
   get 'events', to: 'event#events'
   resources :contents, only: [:index, :new, :create, :show, :search] do
     resources :answer,only: [:index, :show, :new, :create]
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  get "main",to:"contents#index_main"
   post "create_like", to: "contents#create_like"
   post "answer",to: "contents#create_answer"
   get "all",to: "categories#index3"

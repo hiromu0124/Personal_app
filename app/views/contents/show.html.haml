@@ -60,11 +60,11 @@
           = f.submit "",class:"show-like__btn"
           =icon("fas","fas fa-heart",class:"show-like__icon")
   - else
-    .show-like
-      =link_to content_content_like_path(@content.id),method: :delete do
-        =icon("fas","fas fa-heart",class:"show-like__delete__icon")
+    =link_to content_content_like_path(@content.id),method: :delete do
+      .heart
+      
+        
   .show-main
-    =icon("fas","fal fa-clipboard-list",class:"show-icon")
     投稿
   .show-main__titles
     .show-main__titles__title

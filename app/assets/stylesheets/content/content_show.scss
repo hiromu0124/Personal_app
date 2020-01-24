@@ -23,14 +23,29 @@
       font-size: 30px;
       color: white;
     }
-    &__delete{
-      &__icon{
-        font-size: 30px;
-        
-        color: palevioletred;
-      }
+  }
+  .heart {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    margin: 20px 0 0 75px;
+    transform: translate(-50%, -50%);
+    background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    animation: fave-heart 1s steps(28);
+    background-position: -2800px 0;
+    transition: background 1s steps(28);
+  }
+  @keyframes fave-heart {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -2800px 0;
     }
   }
+  
   .show-main{
     border-radius:7px 7px 0 0;
     margin: 0px auto;

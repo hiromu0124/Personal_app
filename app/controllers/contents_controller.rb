@@ -1,5 +1,8 @@
 class ContentsController < ApplicationController
 before_action :set_contents, only: %i[index,show]
+  def index_main
+    
+  end
   def index
     @articles = Content.all
     @content=Content.all
@@ -9,15 +12,19 @@ before_action :set_contents, only: %i[index,show]
     @contents = @q.result(distinct: true)
     end
   def new
-    @comment=Answer.new
-    @content=Content.new
-    @categrise=Category.all
-    @q = Content.ransack(params[:q])
-    @contents = @q.result(distinct: true)
+    if signed_in?
+      @comment=Answer.new
+      @content=Content.new
+      @categrise=Category.all
+      @q = Content.ransack(params[:q])
+      @contents = @q.result(distinct: true)
+    else
+      redirect_to new_user_session_path
+    end
   end
   def create
     Content.create(content_params)
-    redirect_to root_path
+    redirect_to content_path
   
   end
   def create_answer
@@ -29,7 +36,7 @@ before_action :set_contents, only: %i[index,show]
       end
     
     else
-      redirect_to root_path
+      redirect_to content_path
     end
   end
   def create_like
@@ -37,16 +44,20 @@ before_action :set_contents, only: %i[index,show]
     redirect_to content_path(like_params[:content_id])
   end
   def show
-    @q = Content.ransack(params[:q])
-    @contents = @q.result(distinct: true)
-    @answer = Answer.where(content_id:params[:id])
-    @content=Content.find(params[:id])
-    new_history = @content.history.new
-    new_history.user_id = current_user.id
-    new_history.save
-    @comment=Answer.new
-    @like=ContentLike.find_by(user_id:current_user.id,content_id:params[:id])
-    @likes=ContentLike.where(content_id:params[:id]).count
+    if signed_in?
+      @q = Content.ransack(params[:q])
+      @contents = @q.result(distinct: true)
+      @answer = Answer.where(content_id:params[:id])
+      @content=Content.find(params[:id])
+      new_history = @content.history.new
+      new_history.user_id = current_user.id
+      new_history.save
+      @comment=Answer.new
+      @like=ContentLike.find_by(user_id:current_user.id,content_id:params[:id])
+      @likes=ContentLike.where(content_id:params[:id]).count
+    else
+      redirect_to new_user_session_path
+    end
   end
   def destroy
     @like=ContentLike.find_by(user_id:current_user.id,content_id:params[:id])

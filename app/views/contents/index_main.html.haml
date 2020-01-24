@@ -1,0 +1,33 @@
+%section.w
+  .w-head
+    %i.w-eye
+    %i.w-eye.w-eye_right
+  .w-arm
+  .w-arm.w-arm_right
+  .w-leg
+    .w-leg-top
+    .w-leg-bottom
+      .w-heel
+      .w-shoelace
+      .w-shoelace
+  .w-leg.w-leg_right
+    .w-leg-top
+    .w-leg-bottom
+      .w-heel
+      .w-shoelace
+      .w-shoelace
+  .w-body
+    .w-body-skinr
+    .w-body-nipples
+.title
+  =link_to contents_path,class:"title_link" do
+    =icon('fas','fab fa-home',class:"title_home")
+    title
+.login
+  =link_to new_user_session_path,class:"login_link" do
+    =icon("fas","far fa-user",class:"login__user")
+    login
+.signup
+  =link_to new_user_registration_path,class:"signup_link" do
+    =icon("fas","fas fa-user-plus",class:"login__user")
+    sign up
