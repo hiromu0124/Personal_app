@@ -11,6 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
   def new
     @user=User.new(user_params)
+    redirect_to contents_path
   end
 
   # POST /resource
