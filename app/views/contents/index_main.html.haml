@@ -23,11 +23,18 @@
   =link_to contents_path,class:"title_link" do
     =icon('fas','fab fa-home',class:"title_home")
     title
-.login
-  =link_to new_user_session_path,class:"login_link" do
-    =icon("fas","far fa-user",class:"login__user")
-    login
-.signup
-  =link_to new_user_registration_path,class:"signup_link" do
-    =icon("fas","fas fa-user-plus",class:"login__user")
-    sign up
+-if signed_in?
+  .login
+    =link_to destroy_user_session_path, method: :delete,class:"login_link" do
+      =icon("fas","far fa-user",class:"login__user")
+      logout
+- else
+  .login
+    =link_to new_user_session_path,class:"login_link" do
+      =icon("fas","far fa-user",class:"login__user")
+      login
+  .signup
+    =link_to new_user_registration_path,class:"signup_link" do
+      =icon("fas","fas fa-user-plus",class:"login__user")
+      sign up
+  
