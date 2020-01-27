@@ -24,7 +24,7 @@ before_action :set_contents, only: %i[index,show]
   end
   def create
     Content.create(content_params)
-    redirect_to content_path
+    redirect_to contents_path
   
   end
   def create_answer
@@ -36,7 +36,7 @@ before_action :set_contents, only: %i[index,show]
       end
     
     else
-      redirect_to content_path
+      redirect_to contents_path
     end
   end
   def create_like
