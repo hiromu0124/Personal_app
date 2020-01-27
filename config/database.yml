@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: scaf_sample_production
-  username: scaf_sample
-  password: <%= ENV['SCAF_SAMPLE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
