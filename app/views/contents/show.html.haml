@@ -55,8 +55,8 @@
     .show-like
       = form_with(url: create_like_path, model: @like, local: true) do |f|
         %label 
-          = f.hidden_field :user_id,value: current_user.id
-          = f.hidden_field :content_id,value: @content.id
+          = f.hidden_field :user_id,value: current_user.id,class:"like"
+          = f.hidden_field :content_id,value: @content.id,class:"like"
           = f.submit "",class:"show-like__btn"
           =icon("fas","fas fa-heart",class:"show-like__icon")
   - else
