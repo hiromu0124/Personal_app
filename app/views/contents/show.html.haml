@@ -15,6 +15,6 @@
     = form_with(url: answer_path, model: @comment,method: :post,remote: true) do |f|
       質問に答えてあげよう！！
       .answer-form__main
-        = f.text_area  :text, class:"answer-form__main__form",name:"form"
+        = f.text_area  :text, class:"answer-form__main__form"
         = f.hidden_field :content_id ,value: @content.id
         = f.submit "答える",class: "answer-form__main__btn"
