@@ -4,13 +4,12 @@ Rails.application.routes.draw do
   get 'events', to: 'event#events'
   resources :contents, only: [:index, :new, :create, :show, :search] do
     resources :answer,only: [:index, :show, :new, :create]
-    resources :content_likes,only: [:destroy]
+    resources :content_likes,only: [:destroy,:create]
     collection do
       get :search
     end
   end
   get "main",to:"contents#index_main"
-  post "create_like", to: "contents#create_like"
   post "answer",to: "contents#create_answer"
   get "all",to: "categories#index3"
   get "programming",to: "categories#index2"

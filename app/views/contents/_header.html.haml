@@ -4,14 +4,13 @@
       title
   .header__content
     .header__content__home
-    =link_to root_path, class: "header__content__home" do
+    =link_to contents_path, class: "header__content__home" do
       =icon('fas','fab fa-home',class:"header__home")
     .header__content__form
     =search_form_for @q  do |f|
       = hidden_field_tag :sort
       = f.text_field :title_cont,class:"header__content__form__search", autocomplete: 'off'
-      = f.submit "" ,class:"header__content__form__btn",render: "search" 
-      =icon("fas","fas fa-search",class:"header__content__form__icon")
+      = f.submit "検索" ,class:"header__content__form__btn",render: "search"
     .header__content__genre
       %ul#menu
         %li
@@ -47,5 +46,5 @@
       = link_to calendar_index_path,class:"header__content__user__link" do
         =icon("fas","fal fa-calendar-alt",class:"header__content__calendar__icon")
     .header__content__user
-      = link_to edit_user_path(current_user),class:"header__content__user__link" do
+      = link_to profile_path,class:"header__content__user__link" do
         =icon("fas","far fa-user",class:"header__content__user__icon")

@@ -9,6 +9,9 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    -# =render "header"
+    -if request.fullpath=="/"||request.fullpath=="/contents"
+      
+    -else
+      =render "contents/header"
     = yield
         

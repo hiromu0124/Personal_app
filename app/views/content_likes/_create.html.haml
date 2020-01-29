@@ -1,0 +1,8 @@
+-if @like==nil
+  .show-like
+    =link_to content_content_likes_path(@content.id), method: :post, remote: true do
+      =icon("fas","fas fa-heart",class:"show-like__icon")
+- else
+  .show-destroy
+    =link_to content_content_like_path(@content.id,@content.id), method: :delete, remote: true do
+      .heart_sub

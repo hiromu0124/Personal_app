@@ -1,0 +1,5 @@
+$(".show-destroy").html("<%= j(render partial: 'content_likes/create', locals: { content: @content }) %>");
+$(".heart_sub").remove()
+$(".show-destroy").append(`<div class="show-like">
+<a data-remote="true" rel="nofollow" data-method="post" href="/contents/{@content.id}/content_likes"><i class="fas fa-fas fa-heart show-like__icon"></i>
+</a></div>`)

@@ -54,7 +54,7 @@
       .main__menu__header__all
         最近にされた投稿
       .main__menu__header__list
-        =link_to root_path, class: "main__menu__list" do
+        =link_to contents_path, class: "main__menu__list" do
           =icon('fas',"fas fa-stream",class: "main__menu__list")
     .main__menu__contents
       -@articles.each do |content|

@@ -1,7 +1,7 @@
 class ContentsController < ApplicationController
 before_action :set_contents, only: %i[index,show]
   def index_main
-    
+
   end
   def index
     @articles = Content.all
