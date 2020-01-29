@@ -25,14 +25,14 @@
             %li
               =link_to  "SCSS",category_path(category_id=4)
         %li
-          =link_to  "Programming language",categories_path
+          =link_to  "Programming language",programming_path
           %ul
             %li
-              %a{:href => "#"} Ruby
+              =link_to "Ruby",category_path(category_id=5)
             %li
-              %a{:href => "#"} PHP
+              =link_to  "PHP",category_path(category_id=6)
             %li
-              %a{:href => "#"}  JavaScript
+              =link_to  "JavaScript",category_path(category_id=7)
     
     .header__content__create
       = link_to "POST",new_content_path, class: "header__content__create__btn"
