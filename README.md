@@ -1,4 +1,7 @@
 ## Personal_app
+他のuserに質問ができ、それに対してコメントが出来る
+トップページ
+(https://gyazo.com/b109d8dc71435140a3cf23dc0c4d3aa7)
 
 ## usersテーブル
 |Column|Type|Options|
