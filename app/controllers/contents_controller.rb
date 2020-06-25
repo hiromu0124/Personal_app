@@ -1,11 +1,12 @@
 class ContentsController < ApplicationController
 before_action :set_contents, only: %i[index,show]
+PER = 11
   def index_main
 
   end
   def index
     @articles = Content.all
-    @content=Content.all
+    @content=Content.page(params[:page]).per(PER).order('updated_at DESC')
     @contents=Content.new
     @articles =Content.order(created_at: :desc).limit(4)
     @q = Content.ransack(params[:q])

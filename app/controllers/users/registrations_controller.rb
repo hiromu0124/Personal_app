@@ -9,10 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   
   # end
-  def new
-    @user=User.new(user_params)
-    redirect_to contents_path
-  end
 
   # POST /resource
   # def create
@@ -64,8 +60,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-  private
-  def user_params
-    params.permit(:name,:email,:encrypted_password)
-  end
 end

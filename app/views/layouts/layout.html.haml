@@ -9,9 +9,5 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
   %body
-    -if request.fullpath=="/"||request.fullpath=="/users/sign_in"||request.fullpath=="/users/sign_up"||request.fullpath=="/calendar"||request.fullpath.delete("^a-z,/")=="/users//edit"
-
-    -else
-      =render "contents/header"
     = yield
         

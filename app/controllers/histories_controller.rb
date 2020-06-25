@@ -1,8 +1,9 @@
 class HistoriesController < ApplicationController
+  PER=15
   def show
-    @q = History.ransack(params[:q])
-  @answer = @q.result(distinct: true)
-  @history=History.where(user_id:current_user.id)
+    @q = Content.ransack(params[:q])
+    @contents = @q.result(distinct: true)
+  @history=History.where(user_id:current_user.id).page(params[:page]).per(PER)
   end
   def destroy
     @histories=History.where(user_id:current_user.id)

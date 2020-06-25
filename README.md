@@ -1,7 +1,8 @@
 ## Personal_app
-他のuserに質問ができ、それに対してコメントが出来る
+他のuserに質問ができ、それに対してコメントが出来る  
 トップページ  
 ![55EADA34-6006-4516-B8D5-8C3A0BDD8D10_1_105_c](https://user-images.githubusercontent.com/57927265/73331069-fbd07080-42a5-11ea-86e9-19253fb79b40.jpeg)
+
 
 ## usersテーブル
 |Column|Type|Options|

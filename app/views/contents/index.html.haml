@@ -21,9 +21,11 @@
       =icon("fas","fal fa-clipboard-list",class:"show-icon")
       投稿
     .all-main__titles
-      -@contents.each do |content|
-        .all-main__titles__title
-          title:
-          =link_to content.title.truncate(40), content_path(content.id),class:"main__menu__contents__content__link"
-        .all-main__titles__title__text
-          =content.text.truncate(24)
+      -@content.each do |content|
+        =link_to  content_path(content.id),class:"main__menu__contents__content__link" do
+          .all-main__titles__title
+            title:
+            =content.title.truncate(40)
+          .all-main__titles__title__text
+            =content.text.truncate(24)
+    =paginate @content
