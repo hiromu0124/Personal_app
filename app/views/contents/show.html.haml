@@ -18,3 +18,34 @@
         = f.text_area  :text, class:"answer-form__main__form"
         = f.hidden_field :content_id ,value: @content.id
         = f.submit "答える",class: "answer-form__main__btn"
+.main
+  .main__menu
+    .main__menu__header
+      .main__menu__header__all
+        Recently posted
+      .main__menu__header__list
+        =link_to contents_path, class: "main__menu__list" do
+          =icon('fas',"fas fa-stream",class: "main__menu__list")
+    .main__menu__contents
+      -@articles.each do |content|
+        .main__menu__contents__content
+          =link_to content.title.truncate(20), content_path(content.id),class:"main__menu__contents__content__link"
+          -if signed_in?
+            .main__menu__contents__content__user
+              by.
+              =link_to current_user.name, user_path(content.id),class:"main__menu__contents__content__user__link"
+          -else
+
+  .all
+    .all-main
+      =icon("fas","fal fa-clipboard-list",class:"show-icon")
+      post
+    .all-main__titles
+      -@content.each do |content|
+        =link_to  content_path(content.id),class:"main__menu__contents__content__link" do
+          .all-main__titles__title
+            title:
+            =content.title.truncate(40)
+          .all-main__titles__title__text
+            =content.text.truncate(24)
+    =paginate @content 
