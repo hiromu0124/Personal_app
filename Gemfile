@@ -74,7 +74,7 @@ gem 'momentjs-rails'
 gem 'fullcalendar-rails'
 gem 'jquery-rails'
 gem 'ransack'
-gem 'redcarpet', '~> 2.3.0'
+gem 'redcarpet', '~> 3.5.1'
 gem 'coderay'
 group :production do
   gem 'unicorn', '5.4.1'
